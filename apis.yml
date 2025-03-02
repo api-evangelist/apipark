@@ -5,7 +5,9 @@ apis:
   - aid: apipark:apipark
     name: APIPark
     tags:
-      - API
+      - LLM
+      - LLM Gateway
+      - Artificial Intelligence
     humanURL: ' https://apipark.com/'
     properties:
       - url: ' https://apipark.com/'
