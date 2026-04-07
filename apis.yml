@@ -5,11 +5,11 @@ apis:
   - aid: apipark:apipark-ai-gateway
     name: APIPark AI Gateway & API Developer Portal
     tags:
-      - LLM
-      - LLM Gateway
-      - Artificial Intelligence
       - API Gateway
       - API Management
+      - Artificial Intelligence
+      - LLM
+      - LLM Gateway
       - Open Source
     humanURL: https://apipark.com/
     properties:
@@ -27,12 +27,12 @@ apis:
       create new APIs such as sentiment analysis, translation, or data analysis.
 name: APIPark
 tags:
+  - AI
+  - API Gateway
+  - Artificial Intelligence
   - LLM
   - LLM Gateway
-  - Artificial Intelligence
-  - API Gateway
   - Open Source
-  - AI
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
