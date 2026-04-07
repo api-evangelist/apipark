@@ -20,14 +20,11 @@ apis:
       - url: https://docs.apipark.com/docs/release
         type: Changelog
     description: >-
-      APIPark is an open-source, cloud-native AI gateway and API developer
-      portal that enables fine-grained, visual management of LLMs in production
-      environments. It supports integration with 100+ AI models from all major
-      AI companies, standardizes AI API request formats, and allows combining
-      AI models with custom prompts to create new APIs such as sentiment
-      analysis, translation, or data analysis. Built on Golang with Apache 2.0
-      license, it achieves over 20,000 TPS and can be deployed in 5 minutes
-      with a single command.
+      APIPark is an open-source, cloud-native AI gateway and API developer portal
+      that enables fine-grained, visual management of LLMs in production environments.
+      It supports integration with 100+ AI models from all major AI companies, standardizes
+      AI API request formats, and allows combining AI models with custom prompts to
+      create new APIs such as sentiment analysis, translation, or data analysis.
 name: APIPark
 tags:
   - LLM
