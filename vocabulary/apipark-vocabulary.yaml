@@ -1,0 +1,72 @@
+vocabulary:
+  name: APIPark Vocabulary
+  description: Unified taxonomy mapping AI gateway resources, services, teams, and personas for the APIPark open-source AI gateway and developer portal
+  version: 1.0.0
+  updated: '2026-04-19'
+
+resources:
+  - name: Service
+    description: An API service published in the APIPark developer portal, potentially combining AI models with custom prompts
+    properties:
+      - id
+      - name
+      - description
+      - teamId
+      - status
+      - tags
+      - createdAt
+
+  - name: AiModel
+    description: An AI model integration configured in the APIPark AI gateway
+    properties:
+      - id
+      - provider
+      - modelName
+      - status
+      - priority
+
+  - name: Team
+    description: An organizational team managing API services and subscriptions
+    properties:
+      - id
+      - name
+      - description
+      - memberCount
+
+  - name: Subscriber
+    description: A team or application subscribed to an API service
+    properties:
+      - id
+      - serviceId
+      - teamId
+      - status
+      - apiKey
+
+actions:
+  - name: Publish
+    description: Publish an API service to the developer portal for subscription
+  - name: Subscribe
+    description: Subscribe to an API service to obtain an API key
+  - name: Integrate
+    description: Integrate an AI model with the APIPark gateway for unified access
+  - name: Monitor
+    description: Monitor API usage, AI model performance, and gateway traffic
+
+personas:
+  - name: API Producer
+    description: A team publishing API services that may wrap AI models with custom prompts
+  - name: API Consumer
+    description: A developer or team subscribing to and consuming API services
+  - name: Platform Administrator
+    description: An administrator managing the APIPark gateway, teams, and AI model integrations
+
+providers:
+  - OpenAI
+  - Anthropic
+  - Google Gemini
+  - Meta Llama
+  - Mistral
+  - AWS Bedrock
+  - Azure OpenAI
+  - Cohere
+  - DeepSeek

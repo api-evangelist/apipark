@@ -1,0 +1,7 @@
+{
+  "id": "model_openai_gpt4o",
+  "provider": "OpenAI",
+  "modelName": "gpt-4o",
+  "status": "active",
+  "priority": 1
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apipark/main/json-schema/apipark-ai-model-schema.json",
+  "title": "APIPark AI Model",
+  "description": "Schema representing an AI model integrated with the APIPark AI gateway",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier of the AI model integration" },
+    "provider": { "type": "string", "description": "AI provider name (e.g., OpenAI, Anthropic, Gemini)" },
+    "modelName": { "type": "string", "description": "Name of the AI model" },
+    "status": { "type": "string", "enum": ["active", "inactive"] },
+    "priority": { "type": "integer", "description": "Load balancing priority" }
+  },
+  "required": ["id", "provider", "modelName"]
+}

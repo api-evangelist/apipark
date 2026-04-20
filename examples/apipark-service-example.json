@@ -1,0 +1,9 @@
+{
+  "id": "svc_sentiment_v1",
+  "name": "Sentiment Analysis API",
+  "description": "AI-powered sentiment analysis service combining GPT-4o with custom prompts for text classification.",
+  "teamId": "team_ai_platform",
+  "status": "published",
+  "tags": ["ai", "nlp", "sentiment", "gpt-4o"],
+  "createdAt": "2026-01-15T10:00:00Z"
+}

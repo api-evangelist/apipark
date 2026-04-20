@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apipark/main/json-schema/apipark-service-schema.json",
+  "title": "APIPark Service",
+  "description": "Schema representing an API service published in the APIPark developer portal",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier of the service" },
+    "name": { "type": "string", "description": "Name of the API service" },
+    "description": { "type": "string", "description": "Description of the service" },
+    "teamId": { "type": "string", "description": "Team that owns this service" },
+    "status": { "type": "string", "enum": ["draft", "published", "deprecated"] },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "name", "teamId"]
+}

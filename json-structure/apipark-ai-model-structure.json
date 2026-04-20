@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apipark/main/json-structure/apipark-ai-model-structure.json",
+  "title": "APIPark AI Model",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "provider": { "type": "string" },
+    "modelName": { "type": "string" },
+    "status": { "type": "string" },
+    "priority": { "type": "int32" }
+  }
+}
