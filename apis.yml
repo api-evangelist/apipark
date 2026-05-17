@@ -50,7 +50,7 @@ apis:
         url: json-schema/apipark-service-schema.json
       - type: JSONSchema
         url: json-schema/apipark-ai-model-schema.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/apipark-context.jsonld
 common:
   - type: Website
