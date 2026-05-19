@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: APIPark API — AI Models
+  description: 'APIPark API — AI Models. 1 operations. Lead operation: List AI Models. Self-contained Naftiko capability covering
+    one Apipark business surface.'
+  tags:
+  - Apipark
+  - AI Models
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APIPARK_API_KEY: APIPARK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apipark-ai-models
+    baseUri: https://api.apipark.com/v1
+    description: APIPark API — AI Models business capability. Self-contained, no shared references.
+    resources:
+    - name: ai-models
+      path: /ai-models
+      operations:
+      - name: listaimodels
+        method: GET
+        description: List AI Models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.APIPARK_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: apipark-ai-models-rest
+    port: 8080
+    description: REST adapter for APIPark API — AI Models. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/ai-models
+      name: ai-models
+      description: REST surface for ai-models.
+      operations:
+      - method: GET
+        name: listaimodels
+        description: List AI Models
+        call: apipark-ai-models.listaimodels
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apipark-ai-models-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for APIPark API — AI Models. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-ai-models
+      description: List AI Models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apipark-ai-models.listaimodels
+      outputParameters:
+      - type: object
+        mapping: $.

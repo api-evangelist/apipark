@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: APIPark API — Subscriptions
+  description: 'APIPark API — Subscriptions. 1 operations. Lead operation: List Subscribers. Self-contained Naftiko capability
+    covering one Apipark business surface.'
+  tags:
+  - Apipark
+  - Subscriptions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APIPARK_API_KEY: APIPARK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apipark-subscriptions
+    baseUri: https://api.apipark.com/v1
+    description: APIPark API — Subscriptions business capability. Self-contained, no shared references.
+    resources:
+    - name: subscribers
+      path: /subscribers
+      operations:
+      - name: listsubscribers
+        method: GET
+        description: List Subscribers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.APIPARK_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: apipark-subscriptions-rest
+    port: 8080
+    description: REST adapter for APIPark API — Subscriptions. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/subscribers
+      name: subscribers
+      description: REST surface for subscribers.
+      operations:
+      - method: GET
+        name: listsubscribers
+        description: List Subscribers
+        call: apipark-subscriptions.listsubscribers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apipark-subscriptions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for APIPark API — Subscriptions. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-subscribers
+      description: List Subscribers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apipark-subscriptions.listsubscribers
+      outputParameters:
+      - type: object
+        mapping: $.
