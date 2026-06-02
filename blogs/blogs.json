@@ -2,12 +2,20 @@
   "repo": "apipark",
   "feeds": [
     {
-      "source": "https://apipark.com/blog",
+      "source": "https://apipark.com/blog/feed/",
       "feed_url": "https://apipark.com/blog/feed/",
-      "title": "Comments on: Blog",
-      "saved": 0
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://github.com/APIParkLab",
+      "feed_url": "https://github.com/APIParkLab",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 10,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
