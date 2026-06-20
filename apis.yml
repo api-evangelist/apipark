@@ -5,7 +5,7 @@ description: APIPark is an open-source, cloud-native AI gateway and API develope
   lifecycle management, authentication, rate limiting, and cluster deployment for large-scale traffic. Teams can combine AI
   models with custom prompts to create new AI-powered services such as sentiment analysis, translation, or data analysis.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AI Gateway
 - API Gateway
