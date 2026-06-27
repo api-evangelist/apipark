@@ -2,8 +2,8 @@
   "repo": "apipark",
   "feeds": [
     {
-      "source": "https://apipark.com/blog/feed/",
-      "feed_url": "https://apipark.com/blog/feed/",
+      "source": "https://apipark.com/feed/",
+      "feed_url": "https://apipark.com/feed/",
       "title": "",
       "saved": 0,
       "method": "feed"
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 10,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }

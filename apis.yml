@@ -45,13 +45,13 @@ apis:
     url: json-schema/apipark-ai-model-schema.json
   - type: JSONLD
     url: json-ld/apipark-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apipark-ai-models.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apipark-services.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apipark-subscriptions.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apipark-teams.yaml
 common:
 - type: LinkedIn
