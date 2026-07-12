@@ -54,6 +54,10 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apipark-teams.yaml
 common:
+- type: DomainSecurity
+  url: security/apipark-domain-security.yml
+- type: Authentication
+  url: authentication/apipark-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/apipark
 - type: Website
