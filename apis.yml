@@ -54,6 +54,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apipark-teams.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/apipark-agentic-access.yml
 - type: DomainSecurity
   url: security/apipark-domain-security.yml
 - type: Authentication
