@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: APIPark AI Models Teams API
+  description: The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.
+  version: 1.0.0
+  contact:
+    url: https://apipark.com/
+servers:
+- url: https://api.apipark.com/v1
+  description: APIPark API
+security:
+- apiKey: []
+tags:
+- name: Teams
+paths:
+  /teams:
+    get:
+      operationId: listTeams
+      summary: List Teams
+      description: List all teams in the APIPark organization.
+      tags:
+      - Teams
+      responses:
+        '200':
+          description: List of teams
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+              examples:
+                default:
+                  $ref: '#/components/examples/TeamListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  examples:
+    TeamListExample:
+      value:
+      - id: team_xyz
+        name: AI Platform Team
+        description: Team responsible for AI-powered API services
+        memberCount: 5
+  schemas:
+    Team:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the team
+        name:
+          type: string
+          description: Name of the team
+        description:
+          type: string
+          description: Description of the team
+        memberCount:
+          type: integer
+          description: Number of team members
+      required:
+      - id
+      - name
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization

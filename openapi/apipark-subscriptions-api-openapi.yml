@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: APIPark AI Models Subscriptions API
+  description: The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.
+  version: 1.0.0
+  contact:
+    url: https://apipark.com/
+servers:
+- url: https://api.apipark.com/v1
+  description: APIPark API
+security:
+- apiKey: []
+tags:
+- name: Subscriptions
+paths:
+  /subscribers:
+    get:
+      operationId: listSubscribers
+      summary: List Subscribers
+      description: List all subscribers to services in the APIPark developer portal.
+      tags:
+      - Subscriptions
+      responses:
+        '200':
+          description: List of subscribers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subscriber'
+              examples:
+                default:
+                  $ref: '#/components/examples/SubscriberListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Subscriber:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the subscriber
+        serviceId:
+          type: string
+          description: Service being subscribed to
+        teamId:
+          type: string
+          description: Team that created the subscription
+        status:
+          type: string
+          enum:
+          - pending
+          - approved
+          - rejected
+        apiKey:
+          type: string
+          description: API key for accessing the service
+      required:
+      - id
+      - serviceId
+      - teamId
+  examples:
+    SubscriberListExample:
+      value:
+      - id: sub_def456
+        serviceId: svc_abc123
+        teamId: team_consumer
+        status: approved
+        apiKey: sk-xxxxxxxxxxxxxxxxxxxxxxxx
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization

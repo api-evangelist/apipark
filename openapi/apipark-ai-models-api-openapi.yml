@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: APIPark AI Models API
+  description: The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.
+  version: 1.0.0
+  contact:
+    url: https://apipark.com/
+servers:
+- url: https://api.apipark.com/v1
+  description: APIPark API
+security:
+- apiKey: []
+tags:
+- name: AI Models
+paths:
+  /ai-models:
+    get:
+      operationId: listAiModels
+      summary: List AI Models
+      description: List all AI models integrated with the APIPark AI gateway.
+      tags:
+      - AI Models
+      responses:
+        '200':
+          description: List of integrated AI models
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AiModel'
+              examples:
+                default:
+                  $ref: '#/components/examples/AiModelListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    AiModel:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the AI model integration
+        provider:
+          type: string
+          description: AI provider name (e.g., OpenAI, Anthropic, Gemini)
+        modelName:
+          type: string
+          description: Name of the AI model (e.g., gpt-4o, claude-3-5-sonnet)
+        status:
+          type: string
+          enum:
+          - active
+          - inactive
+        priority:
+          type: integer
+          description: Priority for load balancing across model instances
+      required:
+      - id
+      - provider
+      - modelName
+  examples:
+    AiModelListExample:
+      value:
+      - id: model_openai_gpt4o
+        provider: OpenAI
+        modelName: gpt-4o
+        status: active
+        priority: 1
+      - id: model_anthropic_claude
+        provider: Anthropic
+        modelName: claude-3-5-sonnet-20241022
+        status: active
+        priority: 2
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
