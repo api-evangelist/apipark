@@ -5,7 +5,20 @@ description: APIPark is an open-source, cloud-native AI gateway and API develope
   lifecycle management, authentication, rate limiting, and cluster deployment for large-scale traffic. Teams can combine AI
   models with custom prompts to create new AI-powered services such as sentiment analysis, translation, or data analysis.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apipark.png
 tags:
 - AI Gateway
 - API Gateway
@@ -18,27 +31,112 @@ created: '2025-03-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: apipark:apipark-api
-  name: APIPark API
-  description: The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including
-    AI model integration, service management, team administration, and API publishing workflows.
+- aid: apipark:apipark-ai-models-api
+  name: APIPark AI Models API
+  description: The AI Models API from APIPark — 1 operation(s) for ai models.
   humanURL: https://apipark.com/
   baseURL: https://api.apipark.com/v1
   tags:
-  - AI Gateway
-  - API Gateway
-  - API Management
-  - Developer Portal
-  - LLM
+  - AI Models
   properties:
+  - type: OpenAPI
+    url: openapi/apipark-ai-models-api-openapi.yml
   - type: Documentation
     url: https://docs.apipark.com/docs/overview
   - type: GitHubRepository
     url: https://github.com/APIParkLab/APIPark
   - type: ChangeLog
     url: https://docs.apipark.com/docs/release
+  - type: JSONSchema
+    url: json-schema/apipark-service-schema.json
+  - type: JSONSchema
+    url: json-schema/apipark-ai-model-schema.json
+  - type: JSONLD
+    url: json-ld/apipark-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-ai-models.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-services.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-subscriptions.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-teams.yaml
+- aid: apipark:apipark-services-api
+  name: APIPark Services API
+  description: The Services API from APIPark — 1 operation(s) for services.
+  humanURL: https://apipark.com/
+  baseURL: https://api.apipark.com/v1
+  tags:
+  - Services
+  properties:
   - type: OpenAPI
-    url: openapi/apipark-api.yaml
+    url: openapi/apipark-services-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apipark.com/docs/overview
+  - type: GitHubRepository
+    url: https://github.com/APIParkLab/APIPark
+  - type: ChangeLog
+    url: https://docs.apipark.com/docs/release
+  - type: JSONSchema
+    url: json-schema/apipark-service-schema.json
+  - type: JSONSchema
+    url: json-schema/apipark-ai-model-schema.json
+  - type: JSONLD
+    url: json-ld/apipark-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-ai-models.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-services.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-subscriptions.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-teams.yaml
+- aid: apipark:apipark-subscriptions-api
+  name: APIPark Subscriptions API
+  description: The Subscriptions API from APIPark — 1 operation(s) for subscriptions.
+  humanURL: https://apipark.com/
+  baseURL: https://api.apipark.com/v1
+  tags:
+  - Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/apipark-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apipark.com/docs/overview
+  - type: GitHubRepository
+    url: https://github.com/APIParkLab/APIPark
+  - type: ChangeLog
+    url: https://docs.apipark.com/docs/release
+  - type: JSONSchema
+    url: json-schema/apipark-service-schema.json
+  - type: JSONSchema
+    url: json-schema/apipark-ai-model-schema.json
+  - type: JSONLD
+    url: json-ld/apipark-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-ai-models.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-services.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-subscriptions.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apipark-teams.yaml
+- aid: apipark:apipark-teams-api
+  name: APIPark Teams API
+  description: The Teams API from APIPark — 1 operation(s) for teams.
+  humanURL: https://apipark.com/
+  baseURL: https://api.apipark.com/v1
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/apipark-teams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apipark.com/docs/overview
+  - type: GitHubRepository
+    url: https://github.com/APIParkLab/APIPark
+  - type: ChangeLog
+    url: https://docs.apipark.com/docs/release
   - type: JSONSchema
     url: json-schema/apipark-service-schema.json
   - type: JSONSchema
