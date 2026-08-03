@@ -1,0 +1,20 @@
+{
+  "provider": "apipark",
+  "sources": [
+    "apipark-ai-models-api-openapi.yml",
+    "apipark-services-api-openapi.yml",
+    "apipark-subscriptions-api-openapi.yml",
+    "apipark-teams-api-openapi.yml"
+  ],
+  "outputs": [
+    "apipark-ai-models-api-openapi.yml",
+    "apipark-services-api-openapi.yml",
+    "apipark-subscriptions-api-openapi.yml",
+    "apipark-teams-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

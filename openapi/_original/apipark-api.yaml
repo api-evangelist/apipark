@@ -1,0 +1,301 @@
+openapi: 3.0.3
+info:
+  title: APIPark API
+  description: >-
+    The APIPark API provides programmatic access to manage the APIPark AI gateway
+    and developer portal, including AI model integration, service management,
+    team administration, and API publishing workflows.
+  version: 1.0.0
+  contact:
+    url: https://apipark.com/
+servers:
+  - url: https://api.apipark.com/v1
+    description: APIPark API
+security:
+  - apiKey: []
+paths:
+  /services:
+    get:
+      operationId: listServices
+      summary: List Services
+      description: List all API services published in the APIPark developer portal.
+      tags:
+        - Services
+      responses:
+        '200':
+          description: List of services
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+              examples:
+                default:
+                  $ref: '#/components/examples/ServiceListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createService
+      summary: Create Service
+      description: Create a new API service in the APIPark developer portal.
+      tags:
+        - Services
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequest'
+            examples:
+              default:
+                $ref: '#/components/examples/ServiceRequestExample'
+      responses:
+        '201':
+          description: Service created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+              examples:
+                default:
+                  $ref: '#/components/examples/ServiceExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /ai-models:
+    get:
+      operationId: listAiModels
+      summary: List AI Models
+      description: List all AI models integrated with the APIPark AI gateway.
+      tags:
+        - AI Models
+      responses:
+        '200':
+          description: List of integrated AI models
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AiModel'
+              examples:
+                default:
+                  $ref: '#/components/examples/AiModelListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /teams:
+    get:
+      operationId: listTeams
+      summary: List Teams
+      description: List all teams in the APIPark organization.
+      tags:
+        - Teams
+      responses:
+        '200':
+          description: List of teams
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+              examples:
+                default:
+                  $ref: '#/components/examples/TeamListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /subscribers:
+    get:
+      operationId: listSubscribers
+      summary: List Subscribers
+      description: List all subscribers to services in the APIPark developer portal.
+      tags:
+        - Subscriptions
+      responses:
+        '200':
+          description: List of subscribers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subscriber'
+              examples:
+                default:
+                  $ref: '#/components/examples/SubscriberListExample'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+  schemas:
+    Service:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the service
+        name:
+          type: string
+          description: Name of the API service
+        description:
+          type: string
+          description: Description of the service
+        teamId:
+          type: string
+          description: Team that owns this service
+        status:
+          type: string
+          enum: [draft, published, deprecated]
+          description: Publication status of the service
+        tags:
+          type: array
+          items:
+            type: string
+          description: Tags for the service
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - teamId
+    ServiceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the API service
+        description:
+          type: string
+          description: Description of the service
+        teamId:
+          type: string
+          description: Team identifier
+        tags:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - teamId
+    AiModel:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the AI model integration
+        provider:
+          type: string
+          description: AI provider name (e.g., OpenAI, Anthropic, Gemini)
+        modelName:
+          type: string
+          description: Name of the AI model (e.g., gpt-4o, claude-3-5-sonnet)
+        status:
+          type: string
+          enum: [active, inactive]
+        priority:
+          type: integer
+          description: Priority for load balancing across model instances
+      required:
+        - id
+        - provider
+        - modelName
+    Team:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the team
+        name:
+          type: string
+          description: Name of the team
+        description:
+          type: string
+          description: Description of the team
+        memberCount:
+          type: integer
+          description: Number of team members
+      required:
+        - id
+        - name
+    Subscriber:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the subscriber
+        serviceId:
+          type: string
+          description: Service being subscribed to
+        teamId:
+          type: string
+          description: Team that created the subscription
+        status:
+          type: string
+          enum: [pending, approved, rejected]
+        apiKey:
+          type: string
+          description: API key for accessing the service
+      required:
+        - id
+        - serviceId
+        - teamId
+  examples:
+    ServiceListExample:
+      value:
+        - id: "svc_abc123"
+          name: "Sentiment Analysis API"
+          description: "AI-powered sentiment analysis combining GPT-4o with custom prompts"
+          teamId: "team_xyz"
+          status: "published"
+          tags: ["ai", "nlp", "sentiment"]
+          createdAt: "2026-01-15T10:00:00Z"
+    ServiceExample:
+      value:
+        id: "svc_abc123"
+        name: "Sentiment Analysis API"
+        description: "AI-powered sentiment analysis combining GPT-4o with custom prompts"
+        teamId: "team_xyz"
+        status: "published"
+        tags: ["ai", "nlp", "sentiment"]
+        createdAt: "2026-01-15T10:00:00Z"
+    ServiceRequestExample:
+      value:
+        name: "Sentiment Analysis API"
+        description: "AI-powered sentiment analysis combining GPT-4o with custom prompts"
+        teamId: "team_xyz"
+        tags: ["ai", "nlp", "sentiment"]
+    AiModelListExample:
+      value:
+        - id: "model_openai_gpt4o"
+          provider: "OpenAI"
+          modelName: "gpt-4o"
+          status: "active"
+          priority: 1
+        - id: "model_anthropic_claude"
+          provider: "Anthropic"
+          modelName: "claude-3-5-sonnet-20241022"
+          status: "active"
+          priority: 2
+    TeamListExample:
+      value:
+        - id: "team_xyz"
+          name: "AI Platform Team"
+          description: "Team responsible for AI-powered API services"
+          memberCount: 5
+    SubscriberListExample:
+      value:
+        - id: "sub_def456"
+          serviceId: "svc_abc123"
+          teamId: "team_consumer"
+          status: "approved"
+          apiKey: "sk-xxxxxxxxxxxxxxxxxxxxxxxx"
