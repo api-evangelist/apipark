@@ -5,6 +5,19 @@ description: APIPark is an open-source, cloud-native AI gateway and API develope
   lifecycle management, authentication, rate limiting, and cluster deployment for large-scale traffic. Teams can combine AI
   models with custom prompts to create new AI-powered services such as sentiment analysis, translation, or data analysis.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: true
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-11'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -53,14 +66,6 @@ apis:
     url: json-schema/apipark-ai-model-schema.json
   - type: JSONLD
     url: json-ld/apipark-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-ai-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-services.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-subscriptions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-teams.yaml
 - aid: apipark:apipark-services-api
   name: APIPark Services API
   description: The Services API from APIPark — 1 operation(s) for services.
@@ -83,14 +88,6 @@ apis:
     url: json-schema/apipark-ai-model-schema.json
   - type: JSONLD
     url: json-ld/apipark-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-ai-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-services.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-subscriptions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-teams.yaml
 - aid: apipark:apipark-subscriptions-api
   name: APIPark Subscriptions API
   description: The Subscriptions API from APIPark — 1 operation(s) for subscriptions.
@@ -113,14 +110,6 @@ apis:
     url: json-schema/apipark-ai-model-schema.json
   - type: JSONLD
     url: json-ld/apipark-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-ai-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-services.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-subscriptions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-teams.yaml
 - aid: apipark:apipark-teams-api
   name: APIPark Teams API
   description: The Teams API from APIPark — 1 operation(s) for teams.
@@ -143,15 +132,14 @@ apis:
     url: json-schema/apipark-ai-model-schema.json
   - type: JSONLD
     url: json-ld/apipark-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-ai-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-services.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-subscriptions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apipark-teams.yaml
 common:
+- type: IssueTracker
+  url: https://github.com/APIParkLab/APIPark/issues
+- type: Releases
+  url: https://github.com/APIParkLab/APIPark/releases
+- type: License
+  name: Apache-2.0
+  url: https://github.com/APIParkLab/APIPark/blob/main/LICENSE
 - type: AgenticAccess
   url: agentic-access/apipark-agentic-access.yml
 - type: DomainSecurity
