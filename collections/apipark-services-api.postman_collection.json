@@ -1,0 +1,226 @@
+{
+  "item": [
+    {
+      "id": "cabf3d35-7e36-49db-aac3-d9c4c1e139f2",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3eb106f4-0564-46b7-9bf7-f88d2caa3e1a",
+          "name": "List Services",
+          "request": {
+            "name": "List Services",
+            "description": {
+              "content": "List all API services published in the APIPark developer portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74e0482b-c155-4bb8-8ec0-f5b9153f374d",
+              "name": "List of services",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"svc_abc123\",\n    \"name\": \"Sentiment Analysis API\",\n    \"description\": \"AI-powered sentiment analysis combining GPT-4o with custom prompts\",\n    \"teamId\": \"team_xyz\",\n    \"status\": \"published\",\n    \"tags\": [\n      \"ai\",\n      \"nlp\",\n      \"sentiment\"\n    ],\n    \"createdAt\": \"2026-01-15T10:00:00Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60dd4a7e-14f2-4f44-9dce-f8220c4fc592",
+          "name": "Create Service",
+          "request": {
+            "name": "Create Service",
+            "description": {
+              "content": "Create a new API service in the APIPark developer portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"teamId\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "baf30c5c-a2c2-44c8-bebb-3f50a654531f",
+              "name": "Service created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Sentiment Analysis API\",\n  \"description\": \"AI-powered sentiment analysis combining GPT-4o with custom prompts\",\n  \"teamId\": \"team_xyz\",\n  \"tags\": [\n    \"ai\",\n    \"nlp\",\n    \"sentiment\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"svc_abc123\",\n  \"name\": \"Sentiment Analysis API\",\n  \"description\": \"AI-powered sentiment analysis combining GPT-4o with custom prompts\",\n  \"teamId\": \"team_xyz\",\n  \"status\": \"published\",\n  \"tags\": [\n    \"ai\",\n    \"nlp\",\n    \"sentiment\"\n  ],\n  \"createdAt\": \"2026-01-15T10:00:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.apipark.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0b95c31c-b9a9-4d79-8cb5-8aae945aac96",
+    "name": "APIPark AI Models Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.",
+      "type": "text/plain"
+    }
+  }
+}

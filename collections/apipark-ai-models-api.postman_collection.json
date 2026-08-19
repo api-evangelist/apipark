@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "ea4d0a31-ed4f-4b1d-9198-a0611377dc36",
+      "name": "AI Models",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd1a1aad-6834-4741-9c75-701f59b8cfd8",
+          "name": "List AI Models",
+          "request": {
+            "name": "List AI Models",
+            "description": {
+              "content": "List all AI models integrated with the APIPark AI gateway.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ai-models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf3a6bb1-b6ee-4452-b11e-471ea6e46acc",
+              "name": "List of integrated AI models",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ai-models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"model_openai_gpt4o\",\n    \"provider\": \"OpenAI\",\n    \"modelName\": \"gpt-4o\",\n    \"status\": \"active\",\n    \"priority\": 1\n  },\n  {\n    \"id\": \"model_anthropic_claude\",\n    \"provider\": \"Anthropic\",\n    \"modelName\": \"claude-3-5-sonnet-20241022\",\n    \"status\": \"active\",\n    \"priority\": 2\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.apipark.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e8384a20-b6d7-44b9-a8c3-62614a12cf45",
+    "name": "APIPark AI Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.",
+      "type": "text/plain"
+    }
+  }
+}

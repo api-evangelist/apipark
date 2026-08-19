@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "APIPark AI Models API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AI Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List AI Models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apipark.com/v1/ai-models"
+          },
+          "docs": "List all AI models integrated with the APIPark AI gateway."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
