@@ -38,6 +38,13 @@ tags:
 - API Management
 - Developer Portal
 - LLM
+- Open-Source
+tags_raw:
+- AI Gateway
+- API Gateway
+- API Management
+- Developer Portal
+- LLM
 - Open Source
 url: https://raw.githubusercontent.com/api-evangelist/apipark/refs/heads/main/apis.yml
 created: '2025-03-01'
@@ -94,6 +101,8 @@ apis:
   humanURL: https://apipark.com/
   baseURL: https://api.apipark.com/v1
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
@@ -116,6 +125,8 @@ apis:
   humanURL: https://apipark.com/
   baseURL: https://api.apipark.com/v1
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
