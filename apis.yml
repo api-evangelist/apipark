@@ -33,6 +33,10 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apipark.png
+x-docs-platform: docusaurus
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-19
+x-docs-hosting: netlify
 tags:
 - AI Gateway
 - API Gateway
