@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: APIPark AI Models Services API
+  title: APIPark Services API
   description: The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.
   version: 1.0.0
   contact:
@@ -64,40 +64,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  examples:
-    ServiceExample:
-      value:
-        id: svc_abc123
-        name: Sentiment Analysis API
-        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
-        teamId: team_xyz
-        status: published
-        tags:
-        - ai
-        - nlp
-        - sentiment
-        createdAt: '2026-01-15T10:00:00Z'
-    ServiceListExample:
-      value:
-      - id: svc_abc123
-        name: Sentiment Analysis API
-        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
-        teamId: team_xyz
-        status: published
-        tags:
-        - ai
-        - nlp
-        - sentiment
-        createdAt: '2026-01-15T10:00:00Z'
-    ServiceRequestExample:
-      value:
-        name: Sentiment Analysis API
-        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
-        teamId: team_xyz
-        tags:
-        - ai
-        - nlp
-        - sentiment
   schemas:
     Service:
       type: object
@@ -152,6 +118,40 @@ components:
       required:
       - name
       - teamId
+  examples:
+    ServiceRequestExample:
+      value:
+        name: Sentiment Analysis API
+        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
+        teamId: team_xyz
+        tags:
+        - ai
+        - nlp
+        - sentiment
+    ServiceListExample:
+      value:
+      - id: svc_abc123
+        name: Sentiment Analysis API
+        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
+        teamId: team_xyz
+        status: published
+        tags:
+        - ai
+        - nlp
+        - sentiment
+        createdAt: '2026-01-15T10:00:00Z'
+    ServiceExample:
+      value:
+        id: svc_abc123
+        name: Sentiment Analysis API
+        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
+        teamId: team_xyz
+        status: published
+        tags:
+        - ai
+        - nlp
+        - sentiment
+        createdAt: '2026-01-15T10:00:00Z'
   securitySchemes:
     apiKey:
       type: apiKey

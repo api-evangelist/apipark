@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: APIPark AI Models Subscriptions API
+  title: APIPark Subscriptions API
   description: The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.
   version: 1.0.0
   contact:
@@ -36,6 +36,14 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  examples:
+    SubscriberListExample:
+      value:
+      - id: sub_def456
+        serviceId: svc_abc123
+        teamId: team_consumer
+        status: approved
+        apiKey: sk-xxxxxxxxxxxxxxxxxxxxxxxx
   schemas:
     Subscriber:
       type: object
@@ -62,14 +70,6 @@ components:
       - id
       - serviceId
       - teamId
-  examples:
-    SubscriberListExample:
-      value:
-      - id: sub_def456
-        serviceId: svc_abc123
-        teamId: team_consumer
-        status: approved
-        apiKey: sk-xxxxxxxxxxxxxxxxxxxxxxxx
   securitySchemes:
     apiKey:
       type: apiKey

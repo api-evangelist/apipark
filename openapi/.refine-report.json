@@ -1,10 +1,7 @@
 {
   "provider": "apipark",
   "sources": [
-    "apipark-ai-models-api-openapi.yml",
-    "apipark-services-api-openapi.yml",
-    "apipark-subscriptions-api-openapi.yml",
-    "apipark-teams-api-openapi.yml"
+    "_original/apipark-api.yaml"
   ],
   "outputs": [
     "apipark-ai-models-api-openapi.yml",
@@ -15,6 +12,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apipark-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apipark-api.yaml: declared missing tag: AI Models",
+    "apipark-api.yaml: declared missing tag: Services",
+    "apipark-api.yaml: declared missing tag: Subscriptions",
+    "apipark-api.yaml: declared missing tag: Teams",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "apipark-ai-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apipark-services-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apipark-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apipark-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
