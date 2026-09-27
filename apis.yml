@@ -43,7 +43,7 @@ tags:
 - API Management
 - Developer Portal
 - LLM
-- Open-Source
+- Open Source
 tags_raw:
 - AI Gateway
 - API Gateway
@@ -51,6 +51,7 @@ tags_raw:
 - Developer Portal
 - LLM
 - Open Source
+- Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/apipark/refs/heads/main/apis.yml
 created: '2025-03-01'
 modified: '2026-05-19'
