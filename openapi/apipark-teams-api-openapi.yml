@@ -36,13 +36,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  examples:
-    TeamListExample:
-      value:
-      - id: team_xyz
-        name: AI Platform Team
-        description: Team responsible for AI-powered API services
-        memberCount: 5
   schemas:
     Team:
       type: object
@@ -62,6 +55,13 @@ components:
       required:
       - id
       - name
+  examples:
+    TeamListExample:
+      value:
+      - id: team_xyz
+        name: AI Platform Team
+        description: Team responsible for AI-powered API services
+        memberCount: 5
   securitySchemes:
     apiKey:
       type: apiKey

@@ -64,7 +64,60 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  examples:
+    ServiceRequestExample:
+      value:
+        name: Sentiment Analysis API
+        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
+        teamId: team_xyz
+        tags:
+        - ai
+        - nlp
+        - sentiment
+    ServiceListExample:
+      value:
+      - id: svc_abc123
+        name: Sentiment Analysis API
+        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
+        teamId: team_xyz
+        status: published
+        tags:
+        - ai
+        - nlp
+        - sentiment
+        createdAt: '2026-01-15T10:00:00Z'
+    ServiceExample:
+      value:
+        id: svc_abc123
+        name: Sentiment Analysis API
+        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
+        teamId: team_xyz
+        status: published
+        tags:
+        - ai
+        - nlp
+        - sentiment
+        createdAt: '2026-01-15T10:00:00Z'
   schemas:
+    ServiceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the API service
+        description:
+          type: string
+          description: Description of the service
+        teamId:
+          type: string
+          description: Team identifier
+        tags:
+          type: array
+          items:
+            type: string
+      required:
+      - name
+      - teamId
     Service:
       type: object
       properties:
@@ -99,59 +152,6 @@ components:
       - id
       - name
       - teamId
-    ServiceRequest:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the API service
-        description:
-          type: string
-          description: Description of the service
-        teamId:
-          type: string
-          description: Team identifier
-        tags:
-          type: array
-          items:
-            type: string
-      required:
-      - name
-      - teamId
-  examples:
-    ServiceExample:
-      value:
-        id: svc_abc123
-        name: Sentiment Analysis API
-        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
-        teamId: team_xyz
-        status: published
-        tags:
-        - ai
-        - nlp
-        - sentiment
-        createdAt: '2026-01-15T10:00:00Z'
-    ServiceRequestExample:
-      value:
-        name: Sentiment Analysis API
-        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
-        teamId: team_xyz
-        tags:
-        - ai
-        - nlp
-        - sentiment
-    ServiceListExample:
-      value:
-      - id: svc_abc123
-        name: Sentiment Analysis API
-        description: AI-powered sentiment analysis combining GPT-4o with custom prompts
-        teamId: team_xyz
-        status: published
-        tags:
-        - ai
-        - nlp
-        - sentiment
-        createdAt: '2026-01-15T10:00:00Z'
   securitySchemes:
     apiKey:
       type: apiKey
