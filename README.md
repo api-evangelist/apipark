@@ -1,4 +1,4 @@
-# APIPark (apipark)
+# APIPark
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,103 +66,161 @@
 
 APIPark is an open-source, cloud-native AI gateway and API developer portal that helps developers and enterprises manage, integrate, and deploy AI and API services. It supports 100+ AI models from all major AI providers, provides API lifecycle management, authentication, rate limiting, and cluster deployment for large-scale traffic. Teams can combine AI models with custom prompts to create new AI-powered services such as sentiment analysis, translation, or data analysis.
 
-**URL:** [https://apipark.com/](https://apipark.com/)
+**Areas:** AI Gateway · API Gateway · API Management · Developer Portal · LLM · Open Source
 
-## Tags:
+## APIPark on APIs.io
 
- - AI Gateway, API Gateway, API Management, Developer Portal, LLM, Open Source
+Everything profiled for APIPark is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apipark/](https://apis.io/providers/apipark/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (4)
 
-- **Created:** 2025-03-01
-- **Modified:** 2026-04-19
+- [APIPark AI Models API](https://apis.io/apis/apipark/apipark-ai-models-api/) — The AI Models API from APIPark — 1 operation(s) for ai models.
+- [APIPark Services API](https://apis.io/apis/apipark/apipark-services-api/) — The Services API from APIPark — 1 operation(s) for services.
+- [APIPark Subscriptions API](https://apis.io/apis/apipark/apipark-subscriptions-api/) — The Subscriptions API from APIPark — 1 operation(s) for subscriptions.
+- [APIPark Teams API](https://apis.io/apis/apipark/apipark-teams-api/) — The Teams API from APIPark — 1 operation(s) for teams.
 
-## APIs
+### Published properties
 
-### APIPark API
-The APIPark API provides programmatic access to manage the APIPark AI gateway and developer portal, including AI model integration, service management, team administration, and API publishing workflows.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Human URL:** [https://apipark.com/](https://apipark.com/)
+#### Agentic access (1)
 
-#### Tags:
+Which operations an agent can call, which act, and which need a human in the loop.
 
- - AI Gateway, API Gateway, API Management, Developer Portal, LLM
+- [Apipark Agentic Access](https://apis.io/agentic-access/apipark/apipark-agentic-access/)
 
-#### Properties
+#### JSON Schema (2)
 
-- [Documentation](https://docs.apipark.com/docs/overview)
-- [GitHubRepository](https://github.com/APIParkLab/APIPark)
-- [ChangeLog](https://docs.apipark.com/docs/release)
-- [OpenAPI](openapi/apipark-api.yaml)
-- [JSONSchema](json-schema/apipark-service-schema.json)
-- [JSONSchema](json-schema/apipark-ai-model-schema.json)
-- [JSON-LD](json-ld/apipark-context.jsonld)
+The data models the API reads and writes.
 
-## Common Properties
+- [APIPark AI Model](https://apis.io/schemas/apipark/apipark-ai-model/)
+- [APIPark Service](https://apis.io/schemas/apipark/apipark-service/)
+
+#### JSON Structure (2)
+
+Data models expressed in JSON Structure.
+
+- [Apipark Ai Model Structure](https://apis.io/json-structure/apipark/apipark-ai-model-structure/)
+- [Apipark Service Structure](https://apis.io/json-structure/apipark/apipark-service-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apipark Context](https://apis.io/jsonld/apipark/apipark-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [APIPark Vocabulary](https://apis.io/vocabularies/apipark/apipark-vocabulary/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Apipark Ai Model Example](https://apis.io/examples/apipark/apipark-ai-model-example/)
+- [Apipark Service Example](https://apis.io/examples/apipark/apipark-service-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [APIPark AI Models API](https://apis.io/collections/apipark/open-apipark-ai-models-api/)
+- [APIPark AI Models Services API](https://apis.io/collections/apipark/open-apipark-services-api/)
+- [APIPark AI Models Subscriptions API](https://apis.io/collections/apipark/open-apipark-subscriptions-api/)
+- [APIPark AI Models Teams API](https://apis.io/collections/apipark/open-apipark-teams-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [APIPark — jsonschema rules](https://apis.io/rules/apipark/apipark-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apipark Authentication](https://apis.io/security/apipark/apipark-authentication/)
+- [Apipark Domain Security](https://apis.io/security/apipark/apipark-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apipark Plans Pricing](https://apis.io/plans/apipark/apipark-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apipark Rate Limits](https://apis.io/rate-limits/apipark/apipark-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apipark Finops](https://apis.io/finops/apipark/apipark-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://apipark.com/)
 - [Documentation](https://docs.apipark.com/docs/overview)
-- [GitHubOrganization](https://github.com/APIParkLab)
+- [Changelog](https://docs.apipark.com/docs/release)
 - [Blog](https://apipark.com/blog)
-- [ChangeLog](https://docs.apipark.com/docs/release)
+- [GitHub](https://github.com/APIParkLab)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| AI Gateway | Unified AI gateway supporting 100+ AI models from OpenAI, Anthropic, Google, Meta, Mistral, and other major providers. |
-| Prompt Engineering | Combine AI models with custom system prompts to create new API services for specific use cases. |
-| API Developer Portal | Full-featured developer portal for publishing, discovering, and subscribing to API services. |
-| Multi-Tenant Teams | Team-based multi-tenancy for separating API services and subscriptions across organizational units. |
-| API Lifecycle Management | Complete API lifecycle from service creation through publication, subscription, and deprecation. |
-| Rate Limiting and Authentication | Built-in API key authentication, rate limiting, and traffic management for all published services. |
-| Cluster Deployment | Cloud-native cluster deployment supporting large-scale production traffic with high availability. |
+**Kin Score 30.9** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| AI API Standardization | Standardize access to 100+ AI models through a unified API interface, enabling model switching without code changes. |
-| AI Service Creation | Combine AI models with custom prompts to create specialized AI-powered APIs for specific domains. |
-| Enterprise AI Governance | Govern AI model access, usage costs, and rate limits across multiple teams from a centralized portal. |
-| Internal API Marketplace | Build an internal API marketplace for teams to discover and subscribe to AI and traditional API services. |
+**Agent readiness 22.9** — agent-aware
 
-## Solutions
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Open Source | Free, Apache 2.0 licensed self-hosted deployment for organizations with full control over infrastructure. |
-| Cloud | Managed cloud deployment for teams who prefer not to manage infrastructure. |
-| Enterprise | Enterprise support, SLA guarantees, and professional services for large-scale deployments. |
+**Regulatory alignment 15.5** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apipark/](https://apis.io/providers/apipark/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [APIPark API](openapi/apipark-api.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for APIPark: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [apipark-service-schema.json](json-schema/apipark-service-schema.json)
-- [apipark-ai-model-schema.json](json-schema/apipark-ai-model-schema.json)
-
-### JSON Structure
-
-- [apipark-service-structure.json](json-structure/apipark-service-structure.json)
-- [apipark-ai-model-structure.json](json-structure/apipark-ai-model-structure.json)
-
-### JSON-LD
-
-- [apipark-context.jsonld](json-ld/apipark-context.jsonld)
-
-## Vocabulary
-
-- [APIPark Vocabulary](vocabulary/apipark-vocabulary.yaml) — Unified taxonomy mapping AI gateway resources, services, teams, and personas for the APIPark open-source AI gateway and developer portal
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apipark/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
